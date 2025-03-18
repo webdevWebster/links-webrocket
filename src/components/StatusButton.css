@@ -1,0 +1,25 @@
+.status-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #FFD700;
+    color: #FFD700;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .status-button:hover {
+    background: #FFD700;
+    color: black;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #FFD700;
+    border-radius: 50%;
+  }
+  

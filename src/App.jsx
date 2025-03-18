@@ -7,6 +7,9 @@ import PixelTransition from './components/pixelTransitionCard'
 import styled  from 'styled-components'
 import { RcRocketIcon } from 'rocketicons/rc'
 
+import logo from './assets/logo.png'
+import StatusButton from './components/statusButton'
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -16,15 +19,16 @@ const Wrapper = styled.div`
 `
 
 const HeaderSite = styled.header`
-  width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem;
   background: #1C1C1C;
   border-radius: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 300px;
-`
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 2rem;
+  `
 const PerfilComponent = styled.div`
   display: flex;
   align-items: center;
@@ -34,7 +38,7 @@ const PerfilComponent = styled.div`
 const TextTituloSubtitulo = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  text-align: start;
 `
 
 const Titulo = styled.h1`
@@ -45,6 +49,15 @@ const Titulo = styled.h1`
 const Subtitulo = styled.span`
   color: #999;
   font-size: 1rem;
+`
+
+const Banner = styled.div`
+  max-width: 1000px;
+  max-height: 600px;
+  background: #333;
+  border-radius: 2rem;
+  border: 1px solid #000080;
+  margin-top: 2rem;
 `
 
 const items = [
@@ -71,7 +84,7 @@ function App() {
               <PixelTransition
                 firstContent={
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
+                    src={logo}
                     alt="default pixel transition content, a cat!"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
@@ -98,9 +111,13 @@ function App() {
                   <Titulo>WebROCKET</Titulo>
                   <Subtitulo>Agência especializada em marketing</Subtitulo>
               </TextTituloSubtitulo>
-
             </PerfilComponent>
+            <StatusButton />
           </HeaderSite>
+          <Banner>
+            <h1>banner</h1>
+          </Banner>
+
           <Dock 
             items={items}
             panelHeight={68}
