@@ -10,6 +10,8 @@ import { RcRocketIcon } from 'rocketicons/rc'
 import logo from './assets/logo.png'
 import StatusButton from './components/statusButton'
 
+import banner from './assets/banner-whats.png'
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -52,12 +54,26 @@ const Subtitulo = styled.span`
 `
 
 const Banner = styled.div`
-  max-width: 1000px;
-  max-height: 600px;
+  width: 600px;
+  height: 200px;
   background: #333;
   border-radius: 2rem;
   border: 1px solid #000080;
   margin-top: 2rem;
+  background-image: url(${banner}); /* Caminho da sua imagem */
+  background-size: cover; /* Ajusta o tamanho */
+  background-position: center; /* Centraliza a imagem */
+
+  &:hover{
+    scale: 1.1;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px){
+    width: 300px;
+    height: 100px;
+  }
 `
 
 const items = [
@@ -115,7 +131,7 @@ function App() {
             <StatusButton />
           </HeaderSite>
           <Banner>
-            <h1>banner</h1>
+            {/* <img src={banner} alt="" srcset="" /> */}
           </Banner>
 
           <Dock 
