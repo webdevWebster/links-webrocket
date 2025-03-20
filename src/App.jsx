@@ -11,6 +11,7 @@ import logo from './assets/logo.png'
 import StatusButton from './components/statusButton'
 
 import banner from './assets/banner-whats.png'
+import Carousel from './components/Carousel'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -71,8 +72,8 @@ const Banner = styled.div`
   }
 
   @media (max-width: 600px){
-    width: 300px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
   }
 `
 
@@ -133,13 +134,17 @@ function App() {
           <Banner>
             {/* <img src={banner} alt="" srcset="" /> */}
           </Banner>
-
-          <Dock 
-            items={items}
-            panelHeight={68}
-            baseItemSize={50}
-            magnification={70}
-          />
+          <div style={{ height: '600px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+            <h1 style={{fontSize: '2rem', color: '#666'}}>O que fazemos?</h1>
+            <Carousel
+              baseWidth={300}
+              autoplay={true}
+              autoplayDelay={3000}
+              pauseOnHover={true}
+              loop={true}
+              round={false}
+            />
+          </div>
       </Wrapper>
     </>
   )
