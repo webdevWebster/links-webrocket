@@ -1,7 +1,6 @@
 import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'rocketicons/vsc'
 import './App.css'
 import Aurora from './components/Aurora'
-import Dock from './components/Dock'
 import PixelTransition from './components/pixelTransitionCard'
 
 import styled  from 'styled-components'
@@ -11,7 +10,6 @@ import logo from './assets/logo.png'
 import StatusButton from './components/statusButton'
 
 import banner from './assets/banner-whats.png'
-import Carousel from './components/Carousel'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -42,6 +40,7 @@ const TextTituloSubtitulo = styled.div`
   display: flex;
   flex-direction: column;
   text-align: start;
+  gap: 12px;
 `
 
 const Titulo = styled.h1`
@@ -54,7 +53,7 @@ const Subtitulo = styled.span`
   font-size: 1rem;
 `
 
-const Banner = styled.div`
+const Banner1 = styled.div`
   width: 600px;
   height: 200px;
   background: #333;
@@ -69,6 +68,7 @@ const Banner = styled.div`
     scale: 1.1;
     transition: 0.3s;
     cursor: pointer;
+    box-shadow: 0px 0px 20px rgb(32, 32, 252);
   }
 
   @media (max-width: 600px){
@@ -125,26 +125,20 @@ function App() {
                 className="custom-pixel-card"
               />
               <TextTituloSubtitulo>
-                  <Titulo>WebROCKET</Titulo>
-                  <Subtitulo>Agência especializada em marketing</Subtitulo>
+                  <div>
+                    <Titulo>WebROCKET</Titulo>
+                    <Subtitulo>Agência especializada em marketing</Subtitulo>
+                  </div>
+                  <StatusButton />
               </TextTituloSubtitulo>
             </PerfilComponent>
-            <StatusButton />
           </HeaderSite>
-          <Banner>
+          <Banner1>
             {/* <img src={banner} alt="" srcset="" /> */}
-          </Banner>
-          <div style={{ height: '600px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-            <h1 style={{fontSize: '2rem', color: '#666'}}>O que fazemos?</h1>
-            <Carousel
-              baseWidth={300}
-              autoplay={true}
-              autoplayDelay={3000}
-              pauseOnHover={true}
-              loop={true}
-              round={false}
-            />
-          </div>
+          </Banner1>
+          <Banner1>
+            {/* <img src={banner} alt="" srcset="" /> */}
+          </Banner1>
       </Wrapper>
     </>
   )
